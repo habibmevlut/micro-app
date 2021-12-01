@@ -1,0 +1,28 @@
+.login-card {
+  width: 450px;
+  height: 500px;
+
+}
+
+.header-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: -5rem;
+  display: flex;
+}
+
+.main-container {
+  height: 100%;
+  background-color: #F2F2F2;
+}
+
+.login-container {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.login-inner-container {
+  display: table-cell;
+  vertical-align: middle;
+}
