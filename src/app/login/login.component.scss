@@ -1,7 +1,6 @@
 .login-card {
   max-width: 450px;
   min-width: auto;
-  //padding-bottom: 23rem;
 }
 
 .header-image {
@@ -30,7 +29,7 @@
   transform: translate(-50%, -50%);
 }
 
-form.example-container {
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +44,7 @@ form.example-container {
 .login-button {
   min-width: 320px;
 }
+
 .missing-password {
   padding-bottom: 1rem;
   padding-top: 1rem;
