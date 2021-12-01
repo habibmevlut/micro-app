@@ -58,9 +58,13 @@
     mat-card:not(:last-child) {
       margin-right: 1rem;
     }
+
+    mat-card-content.mat-card-content {
+      padding-top: 8rem;
+    }
   }
-  mat-card-content.mat-card-content {
-    padding-top: 8rem;
+  .subtitle {
+    padding-left: 25px;
   }
 }
 
@@ -71,6 +75,9 @@
     mat-card:not(:last-child) {
       margin-bottom: 1rem;
     }
+  }
+  .subtitle {
+    padding-left: 25px;
   }
   mat-card-content.mat-card-content {
     padding-top: 8rem;
