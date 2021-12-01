@@ -43,7 +43,7 @@
 }
 
 .login-button {
-  width: 250px;
+  width: 320px;
 }
 
 .missing-password {
@@ -81,6 +81,16 @@
   }
   mat-card-content.mat-card-content {
     padding-top: 8rem;
+  }
+  .mat-form-field {
+    width: 90%;
+    padding-top: 2rem;
+  }
+  .missing-password {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    width: 100%;
+    text-align-last: right;
   }
 }
 
