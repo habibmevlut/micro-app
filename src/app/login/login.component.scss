@@ -1,7 +1,6 @@
 .login-card {
-  width: 450px;
-  height: 500px;
-
+  max-width: 450px;
+  padding-bottom: 23rem;
 }
 
 .header-image {
@@ -9,22 +8,6 @@
   padding-top: 1rem;
   display: flex;
   padding-left: 3rem;
-}
-
-.main-container {
-  height: 100%;
-  background-color: #F2F2F2;
-}
-
-.login-container {
-  display: table;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.login-inner-container {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .subtitle {
@@ -36,4 +19,12 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
