@@ -1,22 +1,38 @@
 <div class="centered">
-
-  <!--<div class="login-inner-container">-->
   <mat-card class="login-card">
     <img class="header-image" src="assets/img.png">
     <div class="subtitle">
       <span>Google Maps’e Hosgeldiniz.</span>
     </div>
     <mat-card-content>
+
       <form class="example-container">
 
-        <!--<mat-form-field class="d-block">-->
-        <!--  <mat-label>Enter your password</mat-label>-->
-        <!--  <input matInput [type]="hide ? 'password' : 'text'">-->
-        <!--  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"-->
-        <!--          [attr.aria-pressed]="hide">-->
-        <!--    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
-        <!--  </button>-->
-        <!--</mat-form-field>-->
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <label class="missing-password">Şifremi Unttum</label>
+        <div>
+
+          <button mat-raised-button color="primary">
+            <span>Giriş Yap</span>
+          </button>
+        </div>
 
       </form>
 
@@ -26,8 +42,6 @@
     <!--  <button mat-button>SHARE</button>-->
     <!--</mat-card-actions>-->
   </mat-card>
-  <!--</div>-->
-
 </div>
 
 
