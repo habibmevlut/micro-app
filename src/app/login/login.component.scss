@@ -39,6 +39,7 @@
 
 .mat-form-field {
   width: 70%;
+  padding-top: 2rem;
 }
 
 .login-button {
@@ -51,3 +52,22 @@
   width: 70%;
   text-align-last: right;
 }
+
+@media screen and (min-width: 992px) {
+  #wrapper {
+    mat-card:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #wrapper {
+    flex-direction: column;
+
+    mat-card:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
