@@ -5,10 +5,10 @@
 }
 
 .header-image {
-  max-width: 100%;
-  height: auto;
-  margin-top: -5rem;
+  width: 70%;
+  padding-top: 1rem;
   display: flex;
+  padding-left: 3rem;
 }
 
 .main-container {
@@ -25,4 +25,15 @@
 .login-inner-container {
   display: table-cell;
   vertical-align: middle;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: Roboto;
+  color: #000000;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
 }
