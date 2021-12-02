@@ -10,7 +10,7 @@ import { IUser, IUserResult } from '../../service/user.module';
 })
 export class UserComponent implements OnInit {
   loading = false;
-  userList: IUser[] | null = [];
+  userList: IUser | undefined;
 
   constructor(
     private userService: UserService
@@ -25,12 +25,13 @@ export class UserComponent implements OnInit {
 
   fetchUser() {
     this.loading = true;
-    this.userService.getAll()
+    this.userService.getAll({
+      limit: 5
+    })
       .pipe(finalize(() => (this.loading = false)))
       .subscribe(res => {
-        console.log(res.body)
-        // this.userList = res.body
-        // console.log(this.userList)
+        this.userList = res.body?.data;
+        console.log(this.userList)
       })
 
   }

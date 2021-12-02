@@ -1,5 +1,5 @@
 export interface IUser {
-  id: number;
+  id: string;
   title: string;
   firstName: string;
   lastName: string;
@@ -7,7 +7,7 @@ export interface IUser {
 }
 
 export interface IUserResult {
-  data: IUser[];
+  data: IUser;
   limit: number;
   page: number;
   total: number;

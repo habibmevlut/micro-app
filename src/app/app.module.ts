@@ -10,6 +10,7 @@ import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login-operation/login/login.component';
 import { ResetPasswordComponent } from './login-operation/reset-password/reset-password.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { ResetPasswordComponent } from './login-operation/reset-password/reset-p
     HttpClientModule,
     ReactiveFormsModule,
     AppMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [CommonModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {
