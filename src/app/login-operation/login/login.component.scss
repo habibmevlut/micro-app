@@ -43,7 +43,13 @@
 }
 
 .login-button {
-  width: 320px;
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem
+}
+
+.login-btn {
+  width: 70%
 }
 
 .missing-password {
@@ -89,8 +95,20 @@
   .missing-password {
     padding-bottom: 1rem;
     padding-top: 1rem;
-    width: 100%;
+    width: 90%;
     text-align-last: right;
+  }
+  .login-btn {
+    width: 90%
+  }
+  img.header-image {
+    width: 79%;
+    padding-top: 1rem;
+    display: flex;
+    padding-left: 22px;
+  }
+  mat-card.mat-card.mat-focus-indicator.login-card {
+    width: 325px;
   }
 }
 
