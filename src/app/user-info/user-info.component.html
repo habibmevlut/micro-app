@@ -6,101 +6,21 @@
   </mat-toolbar>
 </header>
 
-<div class="row">
+<div class="row" style="overflow: hidden">
   <div class="col-md-3 col-sm-12">
     <div class="user-list-div">
       <span class="user-list-text">Kullanıcı Listesi</span>
     </div>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="user-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
+
+    <div style="display: flex; justify-content: center">
+      <mat-spinner *ngIf="loading" diameter="60"></mat-spinner>
+    </div>
+    <app-user-list *ngFor="let use of userList"
+                   [firstName]="use.firstName"
+                   [lastName]="use.lastName"
+                   [pictureUrl]="use.picture"
+                   [title]="use.title">
+    </app-user-list>
   </div>
 
   <div class="col-md-9 d-none d-md-block">

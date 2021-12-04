@@ -35,6 +35,24 @@ export class UserService {
       );
   }
 
+  getById(req?: PagingParams): Observable<HttpResponse<IUserResult>> {
+    const options = createRequestOption(req);
+    const httpOption = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'app-id': '611f33c594916dee4af13a68'
+      }
+    )
+    return this.http.get<IUserResult>(this.resourceUrl + 'user', {
+      params: options,
+      observe: 'response',
+      headers: httpOption
+    })
+      .pipe(
+        retry(1), catchError(this.handleError)
+      );
+  }
+
+
 
   handleError(error: any) {
     let errorMessage = '';

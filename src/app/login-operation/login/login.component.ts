@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { IUserLoginInfo } from '../../../service/user.module';
 import { USER_EMAIL, USER_PASSWORD } from '../../constants/input.constants';
@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   hideLogin: boolean | undefined;
 
   constructor(
+    private elementRef: ElementRef,
     private fb: FormBuilder,
     private router: Router
   ) {
@@ -25,6 +26,10 @@ export class LoginComponent implements OnInit {
     this.hide = true;
     this.hideLogin = true;
     this.initForm();
+  }
+
+  ngOndestroy() {
+    this.elementRef.nativeElement.remove();
   }
 
   initForm() {
