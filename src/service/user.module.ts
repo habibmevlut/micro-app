@@ -12,3 +12,8 @@ export interface IUserResult {
   page: number;
   total: number;
 }
+
+export interface IUserLoginInfo {
+  email: string;
+  password: string;
+}

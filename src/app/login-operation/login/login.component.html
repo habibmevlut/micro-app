@@ -1,5 +1,4 @@
-<div class="centered">
-
+<div class="centered" *ngIf="hideLogin" (close)="$event">
   <mat-card class="login-card">
     <img class="header-image" src="../../../assets/google-maps.png">
     <div class="subtitle">
@@ -7,27 +6,28 @@
     </div>
     <mat-card-content>
 
-      <form class="form-container">
+      <form class="form-container" [formGroup]="loginForm">
 
         <mat-form-field>
           <mat-label>E-mail</mat-label>
-          <input matInput autocomplete="off">
+          <input matInput formControlName="email" autocomplete="off">
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Şifre</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" autocomplete="off">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" type="button"
                   [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
+        {{hideLogin}}
+        <a class="missing-password" routerLink="/reset-password" (click)="hideLogin = false">Şifremi Unttum</a>
 
-        <label class="missing-password">Şifremi Unttum</label>
       </form>
 
       <div class="login-button">
-        <button class="login-btn" type="button" mat-raised-button color="primary">
+        <button class="login-btn" type="button" mat-raised-button color="primary" (click)="login()">
           <span>Giriş Yap</span>
         </button>
       </div>
