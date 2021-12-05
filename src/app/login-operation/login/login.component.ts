@@ -10,10 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  loginForm: FormGroup | any;
-  hide: boolean | undefined;
-  hideLogin: boolean | undefined;
+  loginAlert: boolean = false;
+  loginForm: FormGroup;
+  hide: boolean;
+  hideLogin: boolean;
 
   constructor(
     private elementRef: ElementRef,
@@ -55,6 +55,11 @@ export class LoginComponent implements OnInit {
       if (this.getFormValue().email === USER_EMAIL && this.getFormValue().password === USER_PASSWORD) {
         this.hideLogin = false;
         this.router.navigate(['/users-info']);
+      } else {
+        this.loginAlert = true;
+        setTimeout(() => {
+          this.loginAlert = false;
+        }, 2000)
       }
     }
   }

@@ -64,6 +64,19 @@
   text-align-last: right;
 }
 
+.alert-danger {
+  background-color: #cf3331;
+  border-color: #d0183d;
+  color: #ffffff;
+}
+
+.alert-danger-div {
+  display: flex;
+  justify-content: end;
+  padding-top: 1rem;
+  padding-right: 2rem;
+}
+
 @media screen and (min-width: 992px) {
   #wrapper {
     mat-card:not(:last-child) {

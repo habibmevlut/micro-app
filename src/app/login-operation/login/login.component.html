@@ -1,4 +1,11 @@
 <body class="page-body">
+
+<div class="row alert-danger-div" *ngIf="loginAlert">
+  <div class="alert alert-danger col-3 alert-danger" role="alert">
+    <strong>Giriş işlemi başarısız oldu! </strong> Lütfen kullanıcı bilgilerinizi kontrol edip tekrar deneyin.
+  </div>
+</div>
+
 <div class="centered" *ngIf="hideLogin">
   <mat-card class="login-card">
     <img class="header-image" src="../../../assets/google-maps.png">

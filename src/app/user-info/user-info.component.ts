@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { finalize } from 'rxjs';
 import { UserService } from '../../service/user.service';
-import { IUser, IUserDetail } from '../../service/user.module';
-import { DEFAULT_USER_LIST_LIMIT, ITEMS_PER_PAGE } from '../constants/pagination.constants';
+import { IUser } from '../../service/user.module';
+import { DEFAULT_USER_LIST_LIMIT } from '../constants/pagination.constants';
 
 @Component({
   selector: 'app-user-info',
@@ -13,7 +13,6 @@ export class UserInfoComponent implements OnInit {
   loading = false;
   moreItem: boolean = false;
   userList: IUser[] | undefined;
-  userDetail: IUserDetail | any;
 
   constructor(
     private userService: UserService,
