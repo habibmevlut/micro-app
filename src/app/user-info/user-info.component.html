@@ -15,11 +15,12 @@
     <div style="display: flex; justify-content: center">
       <mat-spinner *ngIf="loading" diameter="60"></mat-spinner>
     </div>
-    <app-user-list *ngFor="let use of userList"
-                   [firstName]="use.firstName"
-                   [lastName]="use.lastName"
-                   [pictureUrl]="use.picture"
-                   [title]="use.title">
+    <app-user-list *ngFor="let user of userList"
+                   [id]="user.id"
+                   [firstName]="user.firstName"
+                   [lastName]="user.lastName"
+                   [pictureUrl]="user.picture"
+                   [title]="user.title">
     </app-user-list>
   </div>
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { IUserResult } from './user.module';
+import { IUserDetail, IUserResult } from './user.module';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { PagingParams } from '../app/constants/pagination.constants';
 import { createRequestOption } from '../app/util/request-util';
@@ -35,15 +35,13 @@ export class UserService {
       );
   }
 
-  getById(req?: PagingParams): Observable<HttpResponse<IUserResult>> {
-    const options = createRequestOption(req);
+  getById(id: string): Observable<HttpResponse<IUserDetail>> {
     const httpOption = new HttpHeaders({
         'Content-Type': 'application/json',
         'app-id': '611f33c594916dee4af13a68'
       }
     )
-    return this.http.get<IUserResult>(this.resourceUrl + 'user', {
-      params: options,
+    return this.http.get<IUserDetail>(this.resourceUrl + 'user/' + id, {
       observe: 'response',
       headers: httpOption
     })
@@ -51,7 +49,6 @@ export class UserService {
         retry(1), catchError(this.handleError)
       );
   }
-
 
 
   handleError(error: any) {

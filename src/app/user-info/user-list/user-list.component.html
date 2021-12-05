@@ -4,7 +4,8 @@
       <img [src]="pictureUrl" class="user-header-image">
     </div>
     <mat-card-title>{{title}}.{{firstName ? firstName : ''}}  {{lastName ? lastName : ''}}</mat-card-title>
-    <mat-card-subtitle>Email: </mat-card-subtitle>
+    <mat-card-subtitle>Email: {{userDetail?.email}} </mat-card-subtitle>
+    <mat-card-subtitle>Phone: {{userDetail?.phone}} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
   </mat-card-content>

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IUserDetail } from '../../../service/user.module';
+import { UserService } from '../../../service/user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -6,16 +8,28 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
+  userDetail: IUserDetail | any;
 
-  @Input() title: string | undefined;
-  @Input() firstName: string | undefined;
-  @Input() lastName: string | undefined;
-  @Input() pictureUrl: string | undefined;
+  @Input() id: string;
+  @Input() title: string;
+  @Input() firstName: string;
+  @Input() lastName: string;
+  @Input() pictureUrl: string;
 
   constructor(
+    private userService: UserService
   ) {
   }
 
   ngOnInit() {
+    this.fetchUserById(this.id);
+  }
+
+  fetchUserById(id: string) {
+    this.userService.getById(id)
+      .subscribe(res => {
+        this.userDetail = res.body;
+        console.log(this.userDetail)
+      })
   }
 }

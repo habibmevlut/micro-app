@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/co
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { IUserLoginInfo } from '../../../service/user.module';
 import { USER_EMAIL, USER_PASSWORD } from '../../constants/input.constants';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,14 +18,17 @@ export class LoginComponent implements OnInit {
   constructor(
     private elementRef: ElementRef,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log(this.activatedRoute);
     this.hide = true;
     this.hideLogin = true;
     this.initForm();
+    // this.ngOndestroy();
   }
 
   ngOndestroy() {

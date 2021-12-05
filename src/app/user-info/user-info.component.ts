@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { finalize } from 'rxjs';
 import { UserService } from '../../service/user.service';
-import { IUser } from '../../service/user.module';
+import { IUser, IUserDetail } from '../../service/user.module';
 
 @Component({
   selector: 'app-user-info',
@@ -9,22 +9,26 @@ import { IUser } from '../../service/user.module';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
-
   loading = false;
   userList: IUser[] | undefined;
+  userDetail: IUserDetail | any;
 
-  constructor(private userService: UserService, private elementRef: ElementRef) {
+  constructor(
+    private userService: UserService,
+    private elementRef: ElementRef
+  ) {
   }
 
-  ngOnInit(): void {
-    this.fetchUser();
+  ngOnInit() {
+    this.fetchUsers();
+    // this.ngOndestroy();
   }
 
   ngOndestroy() {
     this.elementRef.nativeElement.remove();
   }
 
-  fetchUser() {
+  fetchUsers() {
     this.loading = true;
     this.userService.getAll({
       limit: 9
@@ -36,4 +40,5 @@ export class UserInfoComponent implements OnInit {
       })
 
   }
+
 }

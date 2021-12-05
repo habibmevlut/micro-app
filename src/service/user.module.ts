@@ -17,7 +17,15 @@ export interface IUserDetail {
   registerDate: string;
   phone: string;
   picture: string;
-  location: object;
+  location: ILocation;
+}
+
+export interface ILocation {
+  street: string;
+  city: string;
+  state: string;
+  country: string;
+  timezone: string;
 }
 
 export interface IUserResult {
