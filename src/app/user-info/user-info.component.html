@@ -6,7 +6,7 @@
   </mat-toolbar>
 </header>
 
-<div class="row" style="overflow: hidden">
+<div class="row" style="overflow-y: hidden">
   <div class="col-md-3 col-sm-12">
     <div class="user-list-div">
       <span class="user-list-text">Kullanıcı Listesi</span>
@@ -15,6 +15,7 @@
     <div style="display: flex; justify-content: center">
       <mat-spinner *ngIf="loading" diameter="60"></mat-spinner>
     </div>
+
     <app-user-list *ngFor="let user of userList"
                    [id]="user.id"
                    [firstName]="user.firstName"
@@ -22,6 +23,12 @@
                    [pictureUrl]="user.picture"
                    [title]="user.title">
     </app-user-list>
+
+    <div class="d-none d-md-block" style="display: flex; justify-content: center">
+      <a *ngIf="!moreItem" href="javascript:void(0);" (click)="fetchUsers(20); moreItem = true" class="load-more">Daha fazla yükle</a>
+      <a *ngIf="moreItem" href="javascript:void(0);" (click)="fetchUsers(6); moreItem = false" class="load-more">Daha az yükle</a>
+    </div>
+
   </div>
 
   <div class="col-md-9 d-none d-md-block">

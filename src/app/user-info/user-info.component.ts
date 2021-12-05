@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { finalize } from 'rxjs';
 import { UserService } from '../../service/user.service';
 import { IUser, IUserDetail } from '../../service/user.module';
+import { DEFAULT_USER_LIST_LIMIT, ITEMS_PER_PAGE } from '../constants/pagination.constants';
 
 @Component({
   selector: 'app-user-info',
@@ -10,6 +11,7 @@ import { IUser, IUserDetail } from '../../service/user.module';
 })
 export class UserInfoComponent implements OnInit {
   loading = false;
+  moreItem: boolean = false;
   userList: IUser[] | undefined;
   userDetail: IUserDetail | any;
 
@@ -20,7 +22,7 @@ export class UserInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fetchUsers();
+    this.fetchUsers(DEFAULT_USER_LIST_LIMIT);
     // this.ngOndestroy();
   }
 
@@ -28,10 +30,10 @@ export class UserInfoComponent implements OnInit {
     this.elementRef.nativeElement.remove();
   }
 
-  fetchUsers() {
+  fetchUsers(size?: number) {
     this.loading = true;
     this.userService.getAll({
-      limit: 9
+      limit: size
     })
       .pipe(finalize(() => (this.loading = false)))
       .subscribe(res => {

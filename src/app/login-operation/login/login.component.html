@@ -1,3 +1,4 @@
+<body class="page-body">
 <div class="centered" *ngIf="hideLogin">
   <mat-card class="login-card">
     <img class="header-image" src="../../../assets/google-maps.png">
@@ -21,7 +22,7 @@
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
-        {{hideLogin}}
+
         <a class="missing-password" routerLink="/reset-password" (click)="hideLogin = false">Şifremi Unttum</a>
 
       </form>
@@ -37,6 +38,7 @@
   </mat-card>
 
 </div>
+</body>
 
 
 

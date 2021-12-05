@@ -3,7 +3,9 @@
     <div mat-card-avatar>
       <img [src]="pictureUrl" class="user-header-image">
     </div>
-    <mat-card-title>{{title}}.{{firstName ? firstName : ''}}  {{lastName ? lastName : ''}}</mat-card-title>
+    <mat-card-title>
+      <span style="color: #3988FF">{{title}}.{{firstName ? firstName : ''}}  {{lastName ? lastName : ''}}</span>
+    </mat-card-title>
     <mat-card-subtitle>Email: {{userDetail?.email}} </mat-card-subtitle>
     <mat-card-subtitle>Phone: {{userDetail?.phone}} </mat-card-subtitle>
   </mat-card-header>
