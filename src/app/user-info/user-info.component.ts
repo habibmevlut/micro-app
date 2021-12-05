@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { finalize } from 'rxjs';
 import { UserService } from '../../service/user.service';
 import { IUser } from '../../service/user.module';
-import { DEFAULT_USER_LIST_LIMIT } from '../constants/pagination.constants';
+import { DEFAULT_USER_LIST_LIMIT, MORE_USER_LIST_LIMIT } from '../constants/pagination.constants';
 
 @Component({
   selector: 'app-user-info',
@@ -12,6 +12,8 @@ import { DEFAULT_USER_LIST_LIMIT } from '../constants/pagination.constants';
 export class UserInfoComponent implements OnInit {
   loading = false;
   moreItem: boolean = false;
+  lessUsers = DEFAULT_USER_LIST_LIMIT;
+  moreUsers = MORE_USER_LIST_LIMIT;
   userList: IUser[] | undefined;
 
   constructor(
@@ -22,7 +24,6 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
     this.fetchUsers(DEFAULT_USER_LIST_LIMIT);
-    // this.ngOndestroy();
   }
 
   ngOndestroy() {

@@ -27,9 +27,9 @@
     </div>
 
     <div class="d-none d-md-block" style="display: flex; justify-content: center">
-      <a *ngIf="!moreItem && !loading" href="javascript:void(0);" (click)="fetchUsers(20); moreItem = true" class="load-more">Daha
+      <a *ngIf="!moreItem && !loading" href="javascript:void(0);" (click)="fetchUsers(moreUsers); moreItem = true" class="load-more">Daha
         fazla yükle</a>
-      <a *ngIf="moreItem" href="javascript:void(0);" (click)="fetchUsers(6); moreItem = false" class="load-more">Daha az
+      <a *ngIf="moreItem" href="javascript:void(0);" (click)="fetchUsers(lessUsers); moreItem = false" class="load-more">Daha az
         yükle</a>
     </div>
 
