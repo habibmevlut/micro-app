@@ -30,6 +30,10 @@ export class UserInfoComponent implements OnInit {
     this.elementRef.nativeElement.remove();
   }
 
+  /**
+   * This method fetching user list with size param:
+   * @param size
+   */
   fetchUsers(size?: number) {
     this.loading = true;
     this.userService.getAll({
@@ -38,7 +42,6 @@ export class UserInfoComponent implements OnInit {
       .pipe(finalize(() => (this.loading = false)))
       .subscribe(res => {
         this.userList = res.body?.data;
-        console.log(this.userList)
       })
 
   }
