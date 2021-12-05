@@ -1,7 +1,7 @@
 <body class="page-body">
 
-<div class="row alert-danger-div" *ngIf="loginAlert">
-  <div class="alert alert-danger col-3 alert-danger" role="alert">
+<div class="alert-danger-div">
+  <div class="alert alert-danger col-md-3 col-sm-12" role="alert">
     <strong>Giriş işlemi başarısız oldu! </strong> Lütfen kullanıcı bilgilerinizi kontrol edip tekrar deneyin.
     <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
   </div>
@@ -19,12 +19,13 @@
 
         <mat-form-field>
           <mat-label>E-mail</mat-label>
-          <input matInput formControlName="email" autocomplete="off">
+          <input matInput formControlName="email" autocomplete="off" (keyup.enter)="login()">
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Şifre</mat-label>
-          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" autocomplete="off">
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" autocomplete="off"
+                 (keyup.enter)="login()">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" type="button"
                   [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -36,7 +37,8 @@
       </form>
 
       <div class="login-button">
-        <button class="login-btn" type="button" mat-raised-button color="primary" (click)="login()">
+        <button (click)="login()" class="login-btn" color="primary" mat-raised-button
+                type="button">
           <span>Giriş Yap</span>
         </button>
       </div>
