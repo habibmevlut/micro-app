@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         this.loginAlert = true;
         setTimeout(() => {
           this.loginAlert = false;
-        }, 2000)
+        }, 3000)
       }
     }
   }
