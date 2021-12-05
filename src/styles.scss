@@ -44,3 +44,8 @@ body {
 }
 
 @import "~bootstrap/dist/css/bootstrap.css";
+
+
+body.mat-typography {
+  overflow: hidden;
+}

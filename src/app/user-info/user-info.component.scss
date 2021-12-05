@@ -32,18 +32,23 @@
   position: absolute;
   width: 316.36px;
   height: 21px;
-
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  /* identical to box height */
-
   text-align: center;
-
   color: #3988FF;
+}
 
+.scroll {
+  height: 737px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body.mat-typography {
+  overflow: hidden;
 }
 
 @media screen and (min-width: 992px) {
