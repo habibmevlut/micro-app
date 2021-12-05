@@ -18,6 +18,10 @@ export class UserService {
     CRUD Methods for consuming RESTFULL API
   =========================================*/
 
+  /**
+   * Get all users
+   * @param req
+   */
   getAll(req?: PagingParams): Observable<HttpResponse<IUserResult>> {
     const options = createRequestOption(req);
     const httpOption = new HttpHeaders({
@@ -35,6 +39,10 @@ export class UserService {
       );
   }
 
+  /**
+   * Get a user by id
+   * @param id
+   */
   getById(id: string): Observable<HttpResponse<IUserDetail>> {
     const httpOption = new HttpHeaders({
         'Content-Type': 'application/json',
