@@ -1,6 +1,6 @@
 <body class="page-body">
 
-<div class="alert-danger-div">
+<div class="row alert-danger-div" *ngIf="loginAlert">
   <div class="alert alert-danger col-md-3 col-sm-12" role="alert">
     <strong>Giriş işlemi başarısız oldu! </strong> Lütfen kullanıcı bilgilerinizi kontrol edip tekrar deneyin.
     <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
