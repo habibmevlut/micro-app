@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { finalize } from 'rxjs';
 import { UserService } from '../../service/user.service';
-import { IUser } from '../../service/user.module';
+import { IUser, IUserDetail } from '../../service/user.module';
 import { DEFAULT_USER_LIST_LIMIT, MORE_USER_LIST_LIMIT } from '../constants/pagination.constants';
 
 @Component({
@@ -15,6 +15,7 @@ export class UserInfoComponent implements OnInit {
   lessUsers = DEFAULT_USER_LIST_LIMIT;
   moreUsers = MORE_USER_LIST_LIMIT;
   userList: IUser[] | undefined;
+  selectedUser: IUser;
 
   constructor(
     private userService: UserService,
@@ -44,6 +45,10 @@ export class UserInfoComponent implements OnInit {
         this.userList = res.body?.data;
       })
 
+  }
+
+  selectUser(item: IUser) {
+    this.selectedUser = item;
   }
 
 }

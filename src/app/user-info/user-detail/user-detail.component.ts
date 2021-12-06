@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IUser } from '../../../service/user.module';
 
 @Component({
   selector: 'app-user-detail',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
+  userId: string
+  userName: string;
+  userTitle: string;
 
-  constructor() { }
+  @Input() set userDetail(val: IUser) {
+    this.userId = val?.id;
+    this.userName = val?.firstName + '  ' + val?.lastName;
+    this.userTitle = val?.title;
+  }
 
-  ngOnInit(): void {
+
+  constructor() {
+  }
+
+  ngOnInit() {
   }
 
 }

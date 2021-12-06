@@ -22,23 +22,21 @@
                      [firstName]="user.firstName"
                      [lastName]="user.lastName"
                      [pictureUrl]="user.picture"
-                     [title]="user.title">
+                     [title]="user.title"
+                     (selectUser)="selectUser(user)">
       </app-user-list>
     </div>
 
     <div class="d-none d-md-block" style="display: flex; justify-content: center">
-      <a *ngIf="!moreItem && !loading" href="javascript:void(0);" (click)="fetchUsers(moreUsers); moreItem = true" class="load-more-and-less">Daha fazla yükle</a>
-      <a *ngIf="moreItem" href="javascript:void(0);" (click)="fetchUsers(lessUsers); moreItem = false" class="load-more-and-less">Daha az yükle</a>
+      <a *ngIf="!moreItem && !loading" href="javascript:void(0);" (click)="fetchUsers(moreUsers); moreItem = true"
+         class="load-more-and-less">Daha fazla yükle</a>
+      <a *ngIf="moreItem" href="javascript:void(0);" (click)="fetchUsers(lessUsers); moreItem = false"
+         class="load-more-and-less">Daha az yükle</a>
     </div>
 
   </div>
 
   <div class="col-md-9 d-none d-md-block">
-    <div style="display: flex; justify-content: center; margin-top: 7rem">
-      <img src="assets/img_1.png" style="width: 50%">
-    </div>
-    <div style="display: flex; justify-content: center">
-      <span class="welcome-text">Google Maps’e Hoşgeldiniz</span>
-    </div>
+    <app-user-detail [userDetail]="selectedUser"></app-user-detail>
   </div>
 </div>

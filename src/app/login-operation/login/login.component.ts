@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.activatedRoute);
     this.hide = true;
     this.hideLogin = true;
     this.initForm();

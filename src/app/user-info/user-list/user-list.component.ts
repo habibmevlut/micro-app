@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IUserDetail } from '../../../service/user.module';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IUser, IUserDetail } from '../../../service/user.module';
 import { UserService } from '../../../service/user.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class UserListComponent implements OnInit {
   @Input() firstName: string;
   @Input() lastName: string;
   @Input() pictureUrl: string;
+  @Output() selectUser = new EventEmitter<any>();
 
   constructor(
     private userService: UserService
@@ -29,7 +30,6 @@ export class UserListComponent implements OnInit {
     this.userService.getById(id)
       .subscribe(res => {
         this.userDetail = res.body;
-        console.log(this.userDetail)
       })
   }
 }
