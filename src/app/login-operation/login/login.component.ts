@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     this.hide = true;
     this.hideLogin = true;
     this.initForm();
-    // this.ngOndestroy();
   }
 
   ngOndestroy() {
@@ -58,7 +57,7 @@ export class LoginComponent implements OnInit {
         this.loginAlert = true;
         setTimeout(() => {
           this.loginAlert = false;
-        }, 3000)
+        }, 2000)
       }
     }
   }
